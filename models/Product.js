@@ -3,45 +3,35 @@ import mongoose from "mongoose"
 const ProductSchema = new mongoose.Schema(
     {
         productCode:{
-            type: Number,
-            required: true,
+            type: String,
         },
         imgUrl:{
             type: String,
-            required: true
         },
-        
         brand: {
-            type: String,
-            required: true
+            type: String
         },
         material: {
-            type: String,
-            required: true
+            type: String
         },
         description: {
             type: String,
-            required: false,
             maxlength: 60
         },
         arrivalDate: {
-            type: String,
-            required: true
+            type: String
         },
         vendor: {
-            type: String,
-            required: true
+            type: String
         },
         costPrice: {
-            type: Number,
-            required: true
+            type: String
         },
         salePrice: {
-            type: Number,
-            required: true
+            type: String
         },
         soldPrice: {
-            type: Number
+            type: String
         },
         customerName:{
             type: String
@@ -56,10 +46,10 @@ const ProductSchema = new mongoose.Schema(
             type: String
         },
         amountPaid:{
-            type: Number
+            type: String
         },
         dues:{
-            type: Number
+            type: String
         }
     }, {timestamps: true}
 )

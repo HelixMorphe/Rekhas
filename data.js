@@ -25,6 +25,28 @@ const Places =[
     }
 ]
 
+var brands = [
+    "Mangalagiri",
+    "Coimbatore ",
+    "Bengal",
+    "Kota",
+    "Chanderi",
+    "Benaras",
+    "Raw-Silk",
+    "Bedsheets",
+    "Tussar",
+    "Pathuru",
+    "Venkatagiri",
+    "Kanchi",
+    "Mul-Mul",
+    "Block-Print",
+    "Maheshwari",
+    "Soft-Silk",
+    "Narayanpet",
+    "Linen",
+    "Linen-Fancy"
+]
+
 export {Places}
 
 
