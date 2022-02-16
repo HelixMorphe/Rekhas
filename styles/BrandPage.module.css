@@ -19,3 +19,16 @@
     /* flex: 1; */
     /* text-align: center; */
 }
+.header{
+    display: flex;
+    align-items: center;
+    width: 95%;
+    margin: a
+}
+
+.headerItem{
+    flex: 1
+}
+.title{
+    text-align: center
+}

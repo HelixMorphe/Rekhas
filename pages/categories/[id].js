@@ -1,8 +1,10 @@
 import React from 'react'
-import { useState,useEffect } from 'react';
+import Link from 'next/link'
+import { useState} from 'react';
 import { SareeItem } from '../../components/SareeItem';
 import { useRouter } from 'next/router'
 import styles from '../../styles/BrandPage.module.css'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 const Place = ({data}) => {
   const [mat,setMat] = useState();
   // let mat = 0;
@@ -22,7 +24,19 @@ const Place = ({data}) => {
   }
     
   return <div className={styles.container}>
-            <h2>{router.query.id}</h2>
+            <div className={styles.header}>
+            <Link href="/" passHref>
+              <div className={styles.headerItem} >
+              <ArrowBackIcon />
+              </div>
+            </Link>
+              
+              <div className={styles.headerItem}>
+              <h2 className={styles.title}>{router.query.id.toUpperCase()}</h2>
+              </div>
+              <div className={styles.headerItem}>
+              </div>
+            </div>
             <div className={styles.filterContainer}>
             {unique.map((item,index)=>(
               (index === mat) ? 
