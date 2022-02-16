@@ -11,7 +11,7 @@ const Place = ({data}) => {
   var x = data.filter((item)=>(item.brand === `${router.query.id}`));
   useEffect(()=>{
     setItems(x)
-  },[])
+  },[x])
   const unique = [...new Set(x.map(item => item.material))];
   
 
