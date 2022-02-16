@@ -6,12 +6,11 @@ import styles from '../../styles/BrandPage.module.css'
 const Place = ({data}) => {
   const [mat,setMat] = useState();
   // let mat = 0;
-  const [items,setItems] = useState([]);
   const router = useRouter();
   var x = data.filter((item)=>(item.brand === `${router.query.id}`));
-  useEffect(()=>{
-    setItems(x)
-  },[x])
+  const [items,setItems] = useState(x);
+
+ 
   const unique = [...new Set(x.map(item => item.material))];
   
 
