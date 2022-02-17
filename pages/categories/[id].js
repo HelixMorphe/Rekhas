@@ -61,12 +61,23 @@ const Place = ({data}) => {
             )}
           </div>
 }
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // Fetch data from external API
   const res = await fetch(`https://retail-three.vercel.app/api/products`)
   const data = await res.json()
 
   // Pass data to the page via props
   return { props: { data } }
+}
+export async function getStaticPaths() {
+  // Get the paths we want to pre-render based on posts
+  const category = ['Mangalagiri', 'Coimbatore', 'Kota', 'Soft-Silk', 'Bengal', 'Venkatagiri'] 
+  const paths = category.map((item) => ({
+    params: { id: item },
+  }))
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: false }
 }
 export default Place
