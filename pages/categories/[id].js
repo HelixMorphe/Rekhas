@@ -61,9 +61,11 @@ const Place = ({data}) => {
             )}
           </div>
 }
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   // Fetch data from external API
-  const res = await fetch(`http://localhost:3000/api/products`)
+  let originUrl = window.location.origin
+  console.log(originUrl);
+  const res = await fetch(`${context.resolvedUrl}/api/products`)
   const data = await res.json()
 
   // Pass data to the page via props
