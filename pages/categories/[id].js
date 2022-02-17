@@ -61,10 +61,8 @@ const Place = ({data}) => {
             )}
           </div>
 }
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   // Fetch data from external API
-  let originUrl = window.location.origin
-  console.log(originUrl);
   const res = await fetch(`https://retail-three.vercel.app/api/products`)
   const data = await res.json()
 
