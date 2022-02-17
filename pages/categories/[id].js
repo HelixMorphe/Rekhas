@@ -65,7 +65,7 @@ export async function getServerSideProps(context) {
   // Fetch data from external API
   let originUrl = window.location.origin
   console.log(originUrl);
-  const res = await fetch(`${context.resolvedUrl}/api/products`)
+  const res = await fetch(`https://retail-three.vercel.app/api/products`)
   const data = await res.json()
 
   // Pass data to the page via props
