@@ -4,7 +4,7 @@ import styles from '../../styles/Admin.module.css'
 import CloseIcon from '@mui/icons-material/Close';
 import Form from '../../components/Form'
 import Link from 'next/link'
-const index = ({data}) => {
+const Index = ({data}) => {
   const [open,setOpen] = useState(false)
   const [update, setUpdate] = useState(false)
   const handleOpen =()=>{
@@ -45,4 +45,4 @@ export async function getServerSideProps() {
     return { props: { data } }
   }
 
-export default index
+export default Index
