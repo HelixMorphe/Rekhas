@@ -70,9 +70,9 @@ const Title = ({data}) => {
       key: 'customerContact',
       width: 100
     },{
-      title: 'dataSold',
-      dataIndex: 'dataSold',
-      key: 'dataSold',
+      title: 'dateSold',
+      dataIndex: 'dateSold',
+      key: 'dateSold',
       width: 100
     },
     {

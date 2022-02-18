@@ -20,7 +20,18 @@ a {
   margin: 0
 }
 table,td,th{
-  border: 1px solid black;
-  border-collapse: collapse;
   background-color: white;
+}
+td{
+  padding: 10px;
+}
+.rc-table-row{
+  border-bottom: 1px solid black;
+}
+
+.rc-table-content{
+  width : 70%;
+  height: 91vh;
+  margin: auto;
+  overflow: scroll;
 }
