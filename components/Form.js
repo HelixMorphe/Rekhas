@@ -110,8 +110,8 @@ function Form({open,setOpen,data}) {
         <div onClick={handleOpen} className={styles.closeContainer}><CloseIcon /></div>
         <div className={styles.formContainer}>
         <form onSubmit={formik.handleSubmit}>
-        {array.map((item)=>(
-            <div className={styles.inputContainer}>     
+        {array.map((item,index)=>(
+            <div className={styles.inputContainer} key={index}>     
             <label htmlFor={item} className={styles.label}>{item.toUpperCase()}</label>
                 <input
                 className={styles.input}
@@ -123,8 +123,8 @@ function Form({open,setOpen,data}) {
             />
             </div>
         ))}
-        {dropDownsMenus.map((item)=>(
-            <div className={styles.inputContainer}>     
+        {dropDownsMenus.map((item,index)=>(
+            <div className={styles.inputContainer} key={index}>     
             <label htmlFor={item.name} className={styles.label}>{item.name.toUpperCase()}</label>
             <select id={item.name} name={item.name} onChange={formik.handleChange} className={styles.input} value={formik.values.item}>
                 {item.items.map((a)=>(
