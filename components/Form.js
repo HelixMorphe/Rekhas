@@ -127,8 +127,8 @@ function Form({open,setOpen,data}) {
             <div className={styles.inputContainer} key={index}>     
             <label htmlFor={item.name} className={styles.label}>{item.name.toUpperCase()}</label>
             <select id={item.name} name={item.name} onChange={formik.handleChange} className={styles.input} value={formik.values.item}>
-                {item.items.map((a)=>(
-                    <option value={formik.values.a}>{a}</option>
+                {item.items.map((a,index)=>(
+                    <option value={formik.values.a} key={index}>{a}</option>
                 ))}
                 
             </select>
