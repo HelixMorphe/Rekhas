@@ -1,9 +1,9 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {useFormik} from 'formik'
 import styles from '../styles/Form.module.css'
 import CloseIcon from '@mui/icons-material/Close';
 // import {useEffect} from 'react'
-// import axios from 'axios';
+import axios from 'axios';
 const brandOpt = [
     "Mangalagiri",
     "Coimbatore ",
@@ -77,6 +77,8 @@ const statusOpt =
 function Form({open,setOpen,data}) {
     
     // console.log(filterOptions)
+    const [img,setImg] = useState('');
+    const [imgUrll,setImgUrl] = useState('');
     const array = ['productCode','description','arrivalDate','costPrice','salePrice','soldPrice','customerName','customerContact','amountPaid','dues']
     const dropDownsOpts = [brandOpt,materialOpt,vendorOpt,statusOpt]
     const dropDownsMenus = [{name: 'brand',items:brandOpt},{name:'material',items: materialOpt},{name: 'vendor',items:vendorOpt},{name: 'status',items:statusOpt}]
@@ -97,15 +99,43 @@ function Form({open,setOpen,data}) {
             status	: '',
             amountPaid :'',	
             dues :'',
+
         },
-        onSubmit: values => {
-            console.log(JSON.stringify(values));
-        },
+        onSubmit: async (values) => {
+            let result = (values)
+            result.imgUrl = imgUrll
+            // axios.post(`http://localhost:3000/api/products`, result)
+            // .then(res => {
+            //   console.log(res);
+            //   console.log(res.data);
+            // })
+            console.log(result)
+        }
     })
     const handleOpen =()=>{
         setOpen(!open)
       }
+    const handleImg =(e) =>{
+        setImg(e.target.files[0])
+    }
+    const handleImgSub = async () =>{
+        const form = new FormData()
+        form.append('file', img)
+        form.append('upload_preset', 'einoyqyf')
+        try {
+        const res = await axios.post(
+            'https://api.cloudinary.com/v1_1/dbrfc0ryp/image/upload',
+            form
+        )
+        setImgUrl(res.data.url)
+        alert('success')
+        } catch (err) {
+        console.log(err)
+        }
+    }
+
   return (
+      
     <div className={styles.container}>
         <div onClick={handleOpen} className={styles.closeContainer}><CloseIcon /></div>
         <div className={styles.formContainer}>
@@ -134,6 +164,8 @@ function Form({open,setOpen,data}) {
             </select>
             </div>
         ))}
+        <input type= "file" onChange={event => handleImg(event)}/>
+        <div onClick={handleImgSub}>Upload</div>
         <button type="submit">Submit</button>
      </form>
     </div>
