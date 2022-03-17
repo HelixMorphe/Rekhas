@@ -113,7 +113,7 @@ function Form({ open, setOpen, data }) {
       let result = values;
       result.imgUrl = imgUrll;
       try {
-        axios.post(`http://localhost:3000/api/products`, result);
+        axios.post(`https://rekhas.vercel.app/api/products`, result);
       } catch (err) {
         alert(arr);
       }
