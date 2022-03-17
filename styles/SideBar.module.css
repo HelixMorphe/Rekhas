@@ -1,0 +1,71 @@
+.sidebar {
+  position: fixed;
+  width: 280px;
+  height: 100%;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: "Public Sans", sans-serif;
+}
+.userContainer {
+  /* margin-top: 20vh; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+  width: 85%;
+  margin: auto;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background-color: rgba(145, 158, 171, 0.12);
+  font-size: 14px;
+  font-weight: 500;
+}
+.userLogo {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  margin-right: 10px;
+}
+.userTitle {
+}
+.contentContainer {
+  /* border: 1px solid black; */
+  /* width: 85%; */
+  margin: auto;
+  padding-top: 15vh;
+}
+.contentWrapper {
+  /* padding: 0 20px; */
+}
+.item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  /* background-color: rgba(145, 158, 171, 0.12); */
+}
+.itemIcon {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.itemSelected {
+  display: flex;
+  align-items: center;
+  color: rgb(0, 82, 73);
+  font-weight: 600;
+  padding: 15px 20px;
+  background-color: rgba(0, 123, 85, 0.12);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.logoTitle {
+  font-family: "El Messiri", serif;
+  font-size: 1.75rem;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 1rem;
+}

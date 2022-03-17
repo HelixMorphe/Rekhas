@@ -1,15 +1,17 @@
-.container{
-    /* display: flex; */
-    border: 1px;
+.container {
+  /* display: flex; */
+  padding: 20px;
+  font-size: 16px;
+  border: 1px;
 }
 .parent {
-    display: grid;
-    grid-template-columns: repeat(18, 1fr);
-    border : 1px solid red;
-    /* grid-template-rows: ; */
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  border: 1px solid red;
+  /* grid-template-rows: ; */
 }
-.child{
-    flex: 1;
-    border : 1px solid red;
-    /* align-items: center; */
+.child {
+  flex: 1;
+  border: 1px solid red;
+  /* align-items: center; */
 }
