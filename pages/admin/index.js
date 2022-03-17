@@ -133,7 +133,7 @@ export const getServerSideProps = async (ctx) => {
     };
   }
   // Fetch data from external API
-  const res = await fetch(`http://localhost:3000/api/products`);
+  const res = await fetch(`https://rekha.vercel.app/api/products`);
   const data = await res.json();
 
   // Pass data to the page via props
