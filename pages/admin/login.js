@@ -11,7 +11,7 @@ const Login = () => {
   console.log(router);
   const handleClick = async () => {
     try {
-      await axios.post("https://rekha.vercel.app/api/login", {
+      await axios.post("https://rekhas.vercel.app/api/login", {
         username,
         password,
       });

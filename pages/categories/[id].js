@@ -84,7 +84,7 @@ const Place = ({ data }) => {
 };
 export async function getStaticProps() {
   // Fetch data from external API
-  const res = await fetch(`https://rekha.vercel.app/api/products`);
+  const res = await fetch(`https://rekhas.vercel.app/api/products`);
   const data = await res.json();
 
   // Pass data to the page via props
